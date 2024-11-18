@@ -2,6 +2,7 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{enumerate}
 
 \theoremstyle{definition}
@@ -50,6 +51,16 @@
     If \(xy=xz\), the axioms for multiplication give
     \[y=1y=(x^{-1}x)y=x(x^{-1}y)=x^{-1}(xz)=(x^{-1}x)z=1z=z.\]
     This proves (a). Take \(z=1\) in (a) to obtain (b). Take \(z=x^{-1}\) in (a) to obtain (c). Since \(x^{-1}x=1\), (c) (with \(x^{-1}\) in place of \(x\)) gives (d).
+\end{solution}
+
+\section*{Algebra}
+\subsection*{Sets and Categories}
+
+\begin{exercise}
+    Prove that if \(\sim\) is an equivalence relation on a nonempty set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
+\end{exercise}
+\begin{solution}
+    Let \(a\in S\). By reflexivity, \(a\in[a]_\sim\). Each element of \(S\) is contained in a nonempty equivalence class; hence the union over all such equivalence classes is \(S\). To show that the equivalence classes are mutually disjoint, consider some \(b\in S\) such that \(a\) is not equivalent to \(b\). Assume that there exists some \(x\in [a]_\sim\cap[b]_\sim\). Then \(a\sim x\) and \(b\sim x\), hence \(x\sim b\) by symmetry and \(a\sim b\) by transitivity. This is a contradiction, so \([a]_\sim\cap[b]_\sim=\emptyset\). The elements of \(\mathscr{P}_\sim\) are nonempty, disjoint, and their union is \(S\); thus \(\mathscr{P}_\sim\) is a partition of \(S\).
 \end{solution}
 
 \section*{Topology}

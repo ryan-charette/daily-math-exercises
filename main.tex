@@ -110,4 +110,24 @@
     Therefore \(Z+W\) corresponds to the complex number \((a+c, b+d)\) and \(ZW\) corresponds to \((ac-bd, ad+bc)\). These are exactly the values \(z+w\) and \(zw\).
 \end{solution}
 
+\begin{exercise}
+    Show that the complex-number system can be thought of as the field of all polynomials with real coefficients modulo the irreducible polynomial \(x^2+1\).
+\end{exercise}
+\begin{solution}
+    Define a map \(\phi:\R[x]/(x^2+1)\to\C\) by \(\phi(a+bx)=a+bi\). The map \(\phi\) is a homomorphism:
+    \begin{align*}
+        \phi((a+bx)+(c+dx))&=\phi((a+c)+(b+d)x)\\
+        &=(a+c)+(b+d)i \\
+        &=(a+bi)+(c+di) \\
+        &=\phi(a+bx)+\phi(c+dx) \\
+        &\\
+        \phi((a+bx)(c+dx))&=\phi(ac+(ad+bc)x+bdx^2) \\
+        &=\phi(ac+(ad+bc)x+bd(-1)) \\
+        &=\phi((ac-bd)+(ad+bc)x) \\
+        &=(ac-bd)+(ad+bc)i=(a+bi)(c+di) \\
+        &=\phi(a+bx)\phi(c+dx).
+    \end{align*}
+    It is also bijective: if \(\phi(a+bx)=\phi(c+dx)\), then \(a+bi=c+di\), implying \(a=c\) and \(b=d\). Thus, \(\phi\) is injective. Every complex number \(a+bi\) is the image of \(a+bx\) under \(\phi\), so \(\phi\) is surjective. Therefore, \(\phi\) is an isomorphism of rings and we conclude that \(\C\cong\R[x]/(x^2+1)\).
+\end{solution}
+
 \end{document}

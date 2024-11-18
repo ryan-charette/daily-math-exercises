@@ -152,4 +152,13 @@
     The function \(f\) is a bijective \(C^\infty\) map with \(C^\infty\) inverse, therefore \(f\) satisfies the definition of a diffeomorphism.
 \end{solution}
 
+\begin{exercise}
+    Find a bijective \(C^\infty\) map \(f:\R\to\R\) that does not have a \(C^\infty\) inverse.
+\end{exercise}
+\begin{solution}
+    Define \(f:\R\to\R\) by \(f(x)=x^3\). The function \(f\) is a polynomial, and hence smooth. Injectivity follows from the fact that \(f\) is strictly increasing on \(\R\), and surjectivity follows from the existence of real cube roots for all \(x\in\R\). Therefore \(f\) is a bijective \(C^\infty\) map.
+
+    The inverse function \(f^{-1}\) is given by \(f^{-1}(y)=y^{1/3}\). The first derivative with respect to \(x\) is given by \(\frac{1}{3}y^{-2/3}\), which is undefined at \(x=0\). Thus \(f^{-1}(y)\) is not differentiable at \(y=0\); it fails to be \(C^1\), let alone \(C^\infty\).
+\end{solution}
+
 \end{document}

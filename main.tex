@@ -38,7 +38,7 @@
     Prove that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer.
 \end{exercise}
 \begin{solution}
-    Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the fundamental theorem of arithmetic, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.
+    Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the unique factorization of natural numbers, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.
 \end{solution}
 
 \begin{exercise}
@@ -57,7 +57,7 @@
 \end{solution}
 
 \begin{exercise}
-    Prove that if \(\sim\) is an equivalence relation on a nonempty set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
+    Prove that if \(\sim\) is an equivalence relation on a set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
 \end{exercise}
 \begin{solution}
     Let \(a\in S\). By reflexivity, \(a\in[a]_\sim\). Each element of \(S\) is contained in a nonempty equivalence class; hence the union over all such equivalence classes is \(S\). To show that the equivalence classes are mutually disjoint, consider some \(b\in S\) such that \(a\) is not equivalent to \(b\). Assume that there exists some \(x\in [a]_\sim\cap[b]_\sim\). Then \(a\sim x\) and \(b\sim x\), hence \(x\sim b\) by symmetry and \(a\sim b\) by transitivity. This is a contradiction, so \([a]_\sim\cap[b]_\sim=\emptyset\). The elements of \(\mathscr{P}_\sim\) are nonempty, disjoint, and their union is \(S\); thus \(\mathscr{P}_\sim\) is a partition of \(S\).
@@ -75,12 +75,12 @@
 \subsection*{Day 2}
 
 \begin{exercise}
-    Show that the system of all matrices of the special form
+    Show that the system of all matrices of the form
     \[\begin{pmatrix*}[r]
         \alpha & \beta \\
         -\beta & \alpha
-    \end{pmatrix*},\]
-    combined by matrix addition and matrix multiplication, is isomorphic to the field of complex numbers.
+    \end{pmatrix*}\]
+    combined by matrix addition and matrix multiplication is isomorphic to the field of complex numbers.
 \end{exercise}
 \begin{solution}
     Let \(z=(a,b)\) and \(w=(c,d)\) be two complex numbers. Represent \(z\) and \(w\) by the matrices
@@ -129,6 +129,7 @@
     \end{align*}
     It is also bijective: if \(\phi(a+bx)=\phi(c+dx)\), then \(a+bi=c+di\), implying \(a=c\) and \(b=d\). Thus, \(\phi\) is injective. Every complex number \(a+bi\) is the image of \(a+bx\) under \(\phi\), so \(\phi\) is surjective. Therefore, \(\phi\) is an isomorphism of rings and we conclude that \(\C\cong\R[x]/(x^2+1)\).
 \end{solution}
+
 
 \begin{exercise}
     Let \(g:\R\to\R\) be defined by

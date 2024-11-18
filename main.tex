@@ -2,8 +2,9 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{mathrsfs}
 \usepackage{enumerate}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
 
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}
@@ -11,6 +12,8 @@
 
 \DeclareMathOperator{\N}{\mathbb{N}}
 \DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\C}{\mathbb{C}}
 
 \begin{document}
 
@@ -67,6 +70,44 @@
     Associate to each \(x\in A\) an open set \(U_x\subset A\). Then
     \[V=\bigcup_{x\in A} U_x\]
     is a union of open sets; hence \(V\) is open. Since each \(U_x\) is a subset of \(A\), we have \(V\subset A\). However, each \(x\in A\) is contained in some \(U_x\) (and therefore in \(V\)) so we also have that \(A\subset V\). Thus \(A=V\), implying that \(A\) is open.
+\end{solution}
+
+\subsection*{Day 2}
+
+\begin{exercise}
+    Show that the system of all matrices of the special form
+    \[\begin{pmatrix*}[r]
+        \alpha & \beta \\
+        -\beta & \alpha
+    \end{pmatrix*},\]
+    combined by matrix addition and matrix multiplication, is isomorphic to the field of complex numbers.
+\end{exercise}
+\begin{solution}
+    Let \(z=(a,b)\) and \(w=(c,d)\) be two complex numbers. Represent \(z\) and \(w\) by the matrices
+    \[Z=
+    \begin{pmatrix*}[r]
+        a & b \\
+        -b & a
+    \end{pmatrix*}
+    \quad\text{and}\quad
+    W=
+    \begin{pmatrix*}[r]
+        c & d \\
+        -d & c
+    \end{pmatrix*}.\]
+    Then the sum \(Z+W\) and the product \(ZW\) are given by
+    \[Z+W=
+    \begin{pmatrix*}[r]
+        a+c & b+d \\
+        -b-d & a+c
+    \end{pmatrix*}
+    \quad\text{and}\quad
+    ZW=
+    \begin{pmatrix*}[r]
+        ac-bd & ad+bc \\
+        -ad-bc & ac-bd
+    \end{pmatrix*}.\]
+    Therefore \(Z+W\) corresponds to the complex number \((a+c, b+d)\) and \(ZW\) corresponds to \((ac-bd, ad+bc)\). These are exactly the values \(z+w\) and \(zw\).
 \end{solution}
 
 \end{document}

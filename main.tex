@@ -6,6 +6,7 @@
 
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}
+\newtheorem*{solution}{Solution}
 
 \DeclareMathOperator{\N}{\mathbb{N}}
 \DeclareMathOperator{\Z}{\mathbb{Z}}
@@ -18,7 +19,7 @@
 \begin{exercise}
     If \(r\) is rational (\(r\neq0\)) and \(x\) is irrational, prove that \(r+x\) and \(rx\) are irrational.
 \end{exercise}
-\begin{quote}
+\begin{solution}
     Since \(r\) is rational, we can write \(r=\frac{c}{d}\) for some nonzero \(c,d\in\Z\).
     \begin{enumerate}[(i)]
         \item Suppose \(r+x\) can be written as \(\frac{a}{b}\) for \(a,b\in\Z\), \(b\neq0\). Then 
@@ -27,14 +28,14 @@
         \[x=\frac{a}{b}r^{-1}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}.\]
     \end{enumerate}
     In either case, we have a contradiction to the irrationality of \(x\).
-\end{quote}
+\end{solution}
 
 \begin{exercise}
-    Prove that there is no rational number whose square is 12.
+    Prove that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer.
 \end{exercise}
-\begin{quote}
-    We can prove the more general statement that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer. Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the fundamental theorem of arithmetic, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.    
-\end{quote}
+\begin{solution}
+    Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the fundamental theorem of arithmetic, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.
+\end{solution}
 
 \begin{exercise}
     Let \(\mathbb{F}\) be a field and \(x,y,z\in\mathbb{F}\), \(x\neq0\). Using the field axioms for multiplication, prove the following statements
@@ -45,13 +46,10 @@
         \item \((x^{-1})^{-1}=x\).
     \end{enumerate}
 \end{exercise}
-\begin{quote}
-    \begin{enumerate}[(a)]
-        \item \(y=1y=(x^{-1}x)y=x(x^{-1}y)=x^{-1}(xz)=(x^{-1}x)z=1z=z.\)
-        \item Let \(z=1\). Then \(xz=x1=x=xy\), so (a) implies \(y=1\).
-        \item Let \(z=x^{-1}\). Then \(xz=xx^{-1}=1=xy\), so
-        (a) implies \(y=x^{-1}\).
-        \item Since \(x^{-1}x=1\), (c) implies \(x=(x^{-1})^{-1}\).       
-    \end{enumerate}
-\end{quote}
+\begin{solution}
+    If \(xy=xz\), the axioms for multiplication give
+    \[y=1y=(x^{-1}x)y=x(x^{-1}y)=x^{-1}(xz)=(x^{-1}x)z=1z=z.\]
+    This proves (a). Take \(z=1\) in (a) to obtain (b). Take \(z=x^{-1}\) in (a) to obtain (c). Since \(x^{-1}x=1\), (c) (with \(x^{-1}\) in place of \(x\)) gives (d).
+\end{solution}
+
 \end{document}

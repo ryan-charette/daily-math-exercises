@@ -139,4 +139,17 @@
     The second derivative \(h''(x)=g'(x)=f(x)=x^{1/3}\) is continuous everywhere on its domain, so \(h(x)\) is \(C^2\). The third derivative \(h'''(x)=\frac{1}{3}x^{-2/3}\) has a discontinuity (a vertical asymptote) at \(x=0\); that is, \(h\) is not \(C^3\) at \(x=0\).
 \end{solution}
 
+\begin{exercise}
+    Show that the function \(f:(-\pi/2,\pi/2)\to\R\), \(f(x)=\tan x\), is a diffeomorphism.
+\end{exercise}
+\begin{solution}
+    First we show that \(f\) is a bijection. A strictly increasing function is injective because it never takes the same value twice. The function \(f\) strictly increasing on its domain since \(f'(x)=\sec^2 x>0\) for all \(x\in(-\pi/2,\pi/2)\); hence \(f\) is injective. Moreover, 
+    \[\lim_{x\to-\pi/2^+}=-\infty\quad\text{and}\quad\lim_{x\to\pi/2^-}=\infty.\]
+    Therefore, \(f\) maps \((-\pi/2,\pi/2)\) onto the entire real line \(\R\); that is, \(f\) is surjective. 
+    
+    The function \(f\) is smooth by induction; \(f'(x)=\sec^2 x\) and \(f''(x)=2\tan x\sec^2 x\), so for \(n>2\), \(f^{(n)}\) can be written as the sum of products of differentiable functions, and is therefore itself differentiable. The inverse function \(f^{-1}(y)=\arctan y\) has first derivative \((1+y^2)^{-1}\) with respect to \(y\), which is the reciprocal of a polynomial. For all \(y\in\R\), \(1+y^2\geq1>0\), ensuring that the derivative is well-defined for all real numbers. Thus, \(f^{-1}(y)\) inherits smoothness from the smoothness of polynomials.
+
+    The function \(f\) is a bijective \(C^\infty\) map with \(C^\infty\) inverse, therefore \(f\) satisfies the definition of a diffeomorphism.
+\end{solution}
+
 \end{document}

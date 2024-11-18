@@ -52,4 +52,16 @@
     This proves (a). Take \(z=1\) in (a) to obtain (b). Take \(z=x^{-1}\) in (a) to obtain (c). Since \(x^{-1}x=1\), (c) (with \(x^{-1}\) in place of \(x\)) gives (d).
 \end{solution}
 
+\section*{Topology}
+\subsection*{Topological Spaces}
+
+\begin{exercise}
+    Let \(X\) be a topological space; let \(A\) be a subset of \(X\). Suppose that for each \(x\in A\) there is an open set \(U\) containing \(x\) such that \(U\subset A\). Show that \(A\) is open in \(X\).
+\end{exercise}
+\begin{solution}
+    Associate to each \(x\in A\) an open set \(U_x\subset A\). Then
+    \[V=\bigcup_{x\in A} U_x\]
+    is a union of open sets; hence \(V\) is open. Since each \(U_x\) is a subset of \(A\), we have \(V\subset A\). However, each \(x\in A\) is contained in some \(U_x\) (and therefore in \(V\)) so we also have that \(A\subset V\). Thus \(A=V\), implying that \(A\) is open.
+\end{solution}
+
 \end{document}

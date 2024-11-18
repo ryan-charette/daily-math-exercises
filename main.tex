@@ -130,4 +130,13 @@
     It is also bijective: if \(\phi(a+bx)=\phi(c+dx)\), then \(a+bi=c+di\), implying \(a=c\) and \(b=d\). Thus, \(\phi\) is injective. Every complex number \(a+bi\) is the image of \(a+bx\) under \(\phi\), so \(\phi\) is surjective. Therefore, \(\phi\) is an isomorphism of rings and we conclude that \(\C\cong\R[x]/(x^2+1)\).
 \end{solution}
 
+\begin{exercise}
+    Let \(g:\R\to\R\) be defined by
+    \[g(x)=\int_0^x f(t)\,dt=\int_0^x t^{1/3}\,dt=\frac{3}{4}x^{4/3}.\]
+    Show that the function \(h(x)=\int_0^x g(t)\,dt\) is \(C^2\) but not \(C^3\) at \(x=0\).
+\end{exercise}
+\begin{solution}
+    The second derivative \(h''(x)=g'(x)=f(x)=x^{1/3}\) is continuous everywhere on its domain, so \(h(x)\) is \(C^2\). The third derivative \(h'''(x)=\frac{1}{3}x^{-2/3}\) has a discontinuity (a vertical asymptote) at \(x=0\); that is, \(h\) is not \(C^3\) at \(x=0\).
+\end{solution}
+
 \end{document}

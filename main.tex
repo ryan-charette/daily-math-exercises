@@ -196,4 +196,13 @@
     Thus, the condition under which the equation admits a solution is that the denominator is nonzero, i.e., \(|a|\neq|b|\).
 \end{solution}
 
+\begin{exercise}
+    Prove that for any natural numbers \(a,b,c\), we have \((a+b)+c=a+(b+c)\).
+\end{exercise}
+\begin{solution}
+    We use induction on \(a\), keeping \(b\) and \(c\) fixed. First we show \((0+b)+c=0+(b+c)\). By the definition of addition, \(0+b=b\), implying that \((0+b)+c=b+c\). Similarly, \(0+(b+c)=b+c\). This completes the proof of the case \(a=0\). Now suppose inductively that \((a+b)+c=a+(b+c)\). By the definition of addition, 
+    \[(S(a)+b)+c=S(a+b)+c\quad\text{and}\quad S(a)+(b+c)=S(a+(b+c)),\]
+    where \(S\) is the successor function. The inductive hypothesis gives us that \(S(a+b)+c\) is equal to \(S(a+(b+c))\), as was to be shown. 
+\end{solution}
+
 \end{document}

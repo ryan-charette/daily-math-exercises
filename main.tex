@@ -212,4 +212,11 @@
     Let \(x\in E\). Then \(\alpha\leq x\) by the definition of lower bound. Similarly, \(x\leq\beta\). By the transitivity of order, \(\alpha\leq\beta\).
 \end{solution}
 
+\begin{exercise}
+    Let \(A\) be a nonempty set of real numbers which is bounded below. Let \(-A\) be the set of all numbers \(-x\), where \(x\in A\). Prove that \(\inf A=-\sup(-A)\).
+\end{exercise}
+\begin{solution}
+    For any two real numbers \(a\) and \(b\), \(a\leq b\) implies \(-b\leq -a\). Thus, if \(x\in A\) and \(\alpha=\inf A\), then \(-x\leq-\alpha\). Therefore, \(-\alpha\) is an upper bound of \(-A\). Let \(-\beta=\sup(-A)\). Then \(-x\leq-\beta\leq-\alpha\), and, consequently, \(\alpha\leq\beta\leq x\). That is, \(\beta\) is a lower bound of \(A\). But \(\alpha\) is the greatest lower bound of \(A\), and \(\alpha\leq\beta\), so we must have \(\alpha=\beta\). In other words, \(\inf A=-\sup(-A)\).
+\end{solution}
+
 \end{document}

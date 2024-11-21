@@ -21,10 +21,21 @@
 
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                            Exercise Difficulty Rating Guide                                                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trival: The proof follows directly from definitions or previously established results with no additional reasoning required.       %%
+%% Elementary: The proof involves basic logical steps, often relying on straightforward algebra, arithmetic, or fundamental theorems. %%
+%% Intermediate: The proof requires combining multiple theorems or concepts, with moderate problem-solving and reasoning.             %%
+%% Advanced: The proof demands creative reasoning and deep understanding of important concepts.                                       %%
+%% Challenging: The proof is highly complex, requiring extensive background knowledge, mastery of advanced techniques.                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section*{Week 1}
 \subsection*{Day 1}
 
 \begin{exercise}
+    % Elementary
     If \(r\) is rational (\(r\neq0\)) and \(x\) is irrational, prove that \(r+x\) and \(rx\) are irrational.
 \end{exercise}
 \begin{solution}
@@ -39,6 +50,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Prove that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer.
 \end{exercise}
 \begin{solution}
@@ -46,6 +58,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Trivial
     Let \(\mathbb{F}\) be a field and \(x,y,z\in\mathbb{F}\), \(x\neq0\). Using the field axioms for multiplication, prove the following statements
     \begin{enumerate}[(a)]
         \item If \(xy=xz\), then \(y=z\).
@@ -61,6 +74,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Elementary
     Prove that if \(\sim\) is an equivalence relation on a set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
 \end{exercise}
 \begin{solution}
@@ -68,6 +82,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Trivial
     Let \(X\) be a topological space; let \(A\) be a subset of \(X\). Suppose that for each \(x\in A\) there is an open set \(U\) containing \(x\) such that \(U\subset A\). Show that \(A\) is open in \(X\).
 \end{exercise}
 \begin{solution}
@@ -79,6 +94,7 @@
 \subsection*{Day 2}
 
 \begin{exercise}
+    % Intermediate
     Show that the system of all matrices of the form
     \[\begin{pmatrix*}[r]
         \alpha & \beta \\
@@ -115,6 +131,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Advanced
     Show that the complex-number system can be thought of as the field of all polynomials with real coefficients modulo the irreducible polynomial \(x^2+1\).
 \end{exercise}
 \begin{solution}
@@ -135,6 +152,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Let \(g:\R\to\R\) be defined by
     \[g(x)=\int_0^x f(t)\,dt=\int_0^x t^{1/3}\,dt=\frac{3}{4}x^{4/3}.\]
     Show that the function \(h(x)=\int_0^x g(t)\,dt\) is \(C^2\) but not \(C^3\) at \(x=0\).
@@ -144,6 +162,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Advanced
     Show that the function \(f:(-\pi/2,\pi/2)\to\R\), \(f(x)=\tan x\), is a diffeomorphism.
 \end{exercise}
 \begin{solution}
@@ -157,6 +176,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Find a bijective \(C^\infty\) map \(f:\R\to\R\) that does not have a \(C^\infty\) inverse.
 \end{exercise}
 \begin{solution}
@@ -166,7 +186,9 @@
 \end{solution}
 
 \subsection*{Day 3}
+
 \begin{exercise}
+    % Elementary
     Let \(\mathcal{M}\) be an infinite \(\sigma\)-algebra. Show that \(\mathcal{M}\) contains an infinite sequence of disjoint sets.
 \end{exercise}
 \begin{solution}
@@ -176,6 +198,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Find the conditions under which the equation \(az+b\bar{z}+c=0\) has exactly one solution, and compute that solution.
 \end{exercise}
 \begin{solution}
@@ -197,6 +220,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Elementary
     Prove that for any natural numbers \(a,b,c\), we have \((a+b)+c=a+(b+c)\).
 \end{exercise}
 \begin{solution}
@@ -206,6 +230,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Trivial
     Let \(E\) be a nonempty subset of an ordered set; suppose \(\alpha\) is a lower bound of \(E\) and \(\beta\) is an upper bound of \(E\). Prove that \(\alpha\leq\beta\).
 \end{exercise}
 \begin{solution}
@@ -213,6 +238,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Let \(A\) be a nonempty set of real numbers which is bounded below. Let \(-A\) be the set of all numbers \(-x\), where \(x\in A\). Prove that \(\inf A=-\sup(-A)\).
 \end{exercise}
 \begin{solution}
@@ -220,7 +246,9 @@
 \end{solution}
 
 \subsection{Day 4}
+
 \begin{exercise}
+    % Elementary
     Show that \(\Z[i]\) is a subring of \(\C\).
 \end{exercise}
 \begin{solution}
@@ -228,6 +256,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Trivial
     Let \(a\) and \(b\) be elements of a ring \(R\). Prove that the equation \(a+x=b\) has a unique solution in \(R\).
 \end{exercise}
 \begin{solution}
@@ -235,6 +264,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Elementary
     Let \(S\) and \(T\) be subrings of a ring \(R\). Prove that \(S\cap T\) is a subring of \(R\).
 \end{exercise}
 \begin{solution}
@@ -242,6 +272,7 @@
 \end{solution}
 
 \begin{exercise}
+    % Intermediate
     Prove that the only idempotents in an integral domain \(R\) are 0 and 1.
 \end{exercise}
 \begin{solution}
@@ -249,10 +280,12 @@
 \end{solution}
 
 \begin{exercise}
+    % Trivial
     If \(R\) is a ring with identity and \(\phi:R\to S\) is a homomorphism from \(R\) to a ring \(S\), prove that \(\phi(1_R)\) is idempotent in \(S\).
 \end{exercise}
 \begin{solution}
     By the definition of homomorphism, \(\phi(1_R)^2=\phi(1_R^2)=\phi(1_R)\).
 \end{solution}
+
 
 \end{document}

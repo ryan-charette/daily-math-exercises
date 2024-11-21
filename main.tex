@@ -219,4 +219,12 @@
     For any two real numbers \(a\) and \(b\), \(a\leq b\) implies \(-b\leq -a\). Thus, if \(x\in A\) and \(\alpha=\inf A\), then \(-x\leq-\alpha\). Therefore, \(-\alpha\) is an upper bound of \(-A\). Let \(-\beta=\sup(-A)\). Then \(-x\leq-\beta\leq-\alpha\), and, consequently, \(\alpha\leq\beta\leq x\). That is, \(\beta\) is a lower bound of \(A\). But \(\alpha\) is the greatest lower bound of \(A\), and \(\alpha\leq\beta\), so we must have \(\alpha=\beta\). In other words, \(\inf A=-\sup(-A)\).
 \end{solution}
 
+\subsection{Day 4}
+\begin{exercise}
+    Show that \(\Z[i]\) is a subring of \(\C\).
+\end{exercise}
+\begin{solution}
+    Clearly \(\Z[i]\subset\C\). Let \(a,b,c,d\in\Z\). Then addition in \(\Z[i]\) is defined as \((a,b)+(c,d)=(a+c,b+d)\). This operation inherits closure from \(\Z\). Similarly, multiplication in \(\Z[i]\), defined as \((ac-bd,ad+bc)\), inherits closure from \(\Z\). The additive identity \((0,0)\) is in \(\Z[i]\) because \(0\in\Z\). If \((a,b)\in\Z[i]\), then \((-a,-b)\in\Z[i]\) because \(-a,-b\in\Z\). This suffices to show that \(\Z[i]\) is a subring of \(\C\).
+\end{solution}
+
 \end{document}

@@ -8,7 +8,7 @@
 \usepackage{mathtools}
 
 \theoremstyle{definition}
-\newtheorem{exercise}{Exercise}
+\newtheorem*{exercise}{Exercise}
 \newtheorem*{solution}{Solution}
 
 \DeclareMathOperator{\N}{\mathbb{N}}
@@ -31,32 +31,56 @@
 %% Challenging: The proof is highly complex, requiring extensive background knowledge, mastery of advanced techniques.                %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Week 1}
-\subsection*{Day 1}
+\section*{Week 1: Rings}
 
+\subsection*{Day 1}
+\begin{exercise}
+    % Trivial
+    Let \(a\) and \(b\) be elements of a ring \(R\). Prove that the equation \(a+x=b\) has a unique solution in \(R\).
+\end{exercise}
+\begin{solution}
+    Let \(x_1,x_2\in R\) satisfy \(a+x_1=b\) and \(a+x_2=b\). Then \(x_1=-a+b\) and \(x_2=-a+b\), so \(x_1=x_2\).
+\end{solution}
+
+\subsection*{Day 2}
+\begin{exercise}
+    % Trivial
+    If \(R\) is a ring with identity and \(\phi:R\to S\) is a homomorphism from \(R\) to a ring \(S\), prove that \(\phi(1_R)\) is idempotent in \(S\).
+\end{exercise}
+\begin{solution}
+    By the definition of homomorphism, \(\phi(1_R)^2=\phi(1_R^2)=\phi(1_R)\).
+\end{solution}
+
+\subsection*{Day 3}
 \begin{exercise}
     % Elementary
-    If \(r\) is rational (\(r\neq0\)) and \(x\) is irrational, prove that \(r+x\) and \(rx\) are irrational.
+    Show that \(\Z[i]\) is a subring of \(\C\).
 \end{exercise}
 \begin{solution}
-    Since \(r\) is rational, we can write \(r=\frac{c}{d}\) for some nonzero \(c,d\in\Z\).
-    \begin{enumerate}[(i)]
-        \item Suppose \(r+x\) can be written as \(\frac{a}{b}\) for \(a,b\in\Z\), \(b\neq0\). Then 
-        \[x=\frac{a}{b}-r=\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}.\]
-        \item Suppose \(rx\) can be written as \(\frac{a}{b}\) for \(a,b\in\Z\), \(b\neq0\). Then
-        \[x=\frac{a}{b}r^{-1}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}.\]
-    \end{enumerate}
-    In either case, we have a contradiction to the irrationality of \(x\).
+    Clearly \(\Z[i]\subset\C\). Let \(a,b,c,d\in\Z\). Then addition in \(\Z[i]\) is defined as \((a,b)+(c,d)=(a+c,b+d)\). This operation inherits closure from \(\Z\). Similarly, multiplication in \(\Z[i]\), defined as \((ac-bd,ad+bc)\), inherits closure from \(\Z\). The additive identity \((0,0)\) is in \(\Z[i]\) because \(0\in\Z\). If \((a,b)\in\Z[i]\), then \((-a,-b)\in\Z[i]\) because \(-a,-b\in\Z\). This suffices to show that \(\Z[i]\) is a subring of \(\C\).
 \end{solution}
 
+\subsection*{Day 4}
+\begin{exercise}
+    % Elementary
+    Let \(S\) and \(T\) be subrings of a ring \(R\). Prove that \(S\cap T\) is a subring of \(R\).
+\end{exercise}
+\begin{solution}
+        Let \(x,y\in S\cap T\). Then \(x,y\in S\). Since \(S\) is a subring, \(0\in S\), \(-x\in S\), \(x+y\in S\), and \(xy\in S\). The same argument applies to \(T\). Hence, each of 0, \(-x\), \(x+y\), and \(xy\) are in \(S\cap T\). Finally, \(S\cap T\subset R\), so \(S\cap T\) is a subring of \(R\).
+\end{solution}
+
+\subsection*{Day 5}
 \begin{exercise}
     % Intermediate
-    Prove that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer.
+    Prove that the only idempotents in an integral domain \(R\) are 0 and 1.
 \end{exercise}
 \begin{solution}
-    Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the unique factorization of natural numbers, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.
+    Let \(r\in R\), and suppose \(r^2=r\). If \(r^{-1}\) does not exist, then \(r=0\). Otherwise, multiplying both sides by \(r^{-1}\) yields \(r=1\). 
 \end{solution}
 
+\section*{Week 2: Fields}
+
+\subsection*{Day 1}
 \begin{exercise}
     % Trivial
     Let \(\mathbb{F}\) be a field and \(x,y,z\in\mathbb{F}\), \(x\neq0\). Using the field axioms for multiplication, prove the following statements
@@ -73,26 +97,7 @@
     This proves (a). Take \(z=1\) in (a) to obtain (b). Take \(z=x^{-1}\) in (a) to obtain (c). Since \(x^{-1}x=1\), (c) (with \(x^{-1}\) in place of \(x\)) gives (d).
 \end{solution}
 
-\begin{exercise}
-    % Elementary
-    Prove that if \(\sim\) is an equivalence relation on a set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
-\end{exercise}
-\begin{solution}
-    Let \(a\in S\). By reflexivity, \(a\in[a]_\sim\). Each element of \(S\) is contained in a nonempty equivalence class; hence the union over all such equivalence classes is \(S\). To show that the equivalence classes are mutually disjoint, consider some \(b\in S\) such that \(a\) is not equivalent to \(b\). Assume that there exists some \(x\in [a]_\sim\cap[b]_\sim\). Then \(a\sim x\) and \(b\sim x\), hence \(x\sim b\) by symmetry and \(a\sim b\) by transitivity. This is a contradiction, so \([a]_\sim\cap[b]_\sim=\emptyset\). The elements of \(\mathscr{P}_\sim\) are nonempty, disjoint, and their union is \(S\); thus \(\mathscr{P}_\sim\) is a partition of \(S\).
-\end{solution}
-
-\begin{exercise}
-    % Trivial
-    Let \(X\) be a topological space; let \(A\) be a subset of \(X\). Suppose that for each \(x\in A\) there is an open set \(U\) containing \(x\) such that \(U\subset A\). Show that \(A\) is open in \(X\).
-\end{exercise}
-\begin{solution}
-    Associate to each \(x\in A\) an open set \(U_x\subset A\). Then
-    \[V=\bigcup_{x\in A} U_x\]
-    is a union of open sets; hence \(V\) is open. Since each \(U_x\) is a subset of \(A\), we have \(V\subset A\). However, each \(x\in A\) is contained in some \(U_x\) (and therefore in \(V\)) so we also have that \(A\subset V\). Thus \(A=V\), implying that \(A\) is open.
-\end{solution}
-
 \subsection*{Day 2}
-
 \begin{exercise}
     % Intermediate
     Show that the system of all matrices of the form
@@ -130,6 +135,7 @@
     Therefore \(Z+W\) corresponds to the complex number \((a+c, b+d)\) and \(ZW\) corresponds to \((ac-bd, ad+bc)\). These are exactly the values \(z+w\) and \(zw\).
 \end{solution}
 
+\subsection*{Day 3}
 \begin{exercise}
     % Advanced
     Show that the complex-number system can be thought of as the field of all polynomials with real coefficients modulo the irreducible polynomial \(x^2+1\).
@@ -151,6 +157,9 @@
     It is also bijective: if \(\phi(a+bx)=\phi(c+dx)\), then \(a+bi=c+di\), implying \(a=c\) and \(b=d\). Thus, \(\phi\) is injective. Every complex number \(a+bi\) is the image of \(a+bx\) under \(\phi\), so \(\phi\) is surjective. Therefore, \(\phi\) is an isomorphism of rings and we conclude that \(\C\cong\R[x]/(x^2+1)\).
 \end{solution}
 
+\section*{Week 3: Smooth Functions}
+
+\subsection*{Day 1}
 \begin{exercise}
     % Intermediate
     Let \(g:\R\to\R\) be defined by
@@ -161,6 +170,18 @@
     The second derivative \(h''(x)=g'(x)=f(x)=x^{1/3}\) is continuous everywhere on its domain, so \(h(x)\) is \(C^2\). The third derivative \(h'''(x)=\frac{1}{3}x^{-2/3}\) has a discontinuity (a vertical asymptote) at \(x=0\); that is, \(h\) is not \(C^3\) at \(x=0\).
 \end{solution}
 
+\subsection*{Day 2}
+\begin{exercise}
+    % Intermediate
+    Find a bijective \(C^\infty\) map \(f:\R\to\R\) that does not have a \(C^\infty\) inverse.
+\end{exercise}
+\begin{solution}
+    Define \(f:\R\to\R\) by \(f(x)=x^3\). The function \(f\) is a polynomial, and hence smooth. Injectivity follows from the fact that \(f\) is strictly increasing on \(\R\), and surjectivity follows from the existence of real cube roots for all \(x\in\R\). Therefore \(f\) is a bijective \(C^\infty\) map.
+
+    The inverse function \(f^{-1}\) is given by \(f^{-1}(y)=y^{1/3}\). The first derivative with respect to \(x\) is given by \(\frac{1}{3}y^{-2/3}\), which is undefined at \(x=0\). Thus \(f^{-1}(y)\) is not differentiable at \(y=0\); it fails to be \(C^1\), let alone \(C^\infty\).
+\end{solution}
+
+\subsection*{Day 3}
 \begin{exercise}
     % Advanced
     Show that the function \(f:(-\pi/2,\pi/2)\to\R\), \(f(x)=\tan x\), is a diffeomorphism.
@@ -175,31 +196,57 @@
     The function \(f\) is a bijective \(C^\infty\) map with \(C^\infty\) inverse, therefore \(f\) satisfies the definition of a diffeomorphism.
 \end{solution}
 
+\section*{Week 4: Number systems}
+
+\subsection*{Day 1}
 \begin{exercise}
-    % Intermediate
-    Find a bijective \(C^\infty\) map \(f:\R\to\R\) that does not have a \(C^\infty\) inverse.
+    % Elementary
+    If \(r\) is rational (\(r\neq0\)) and \(x\) is irrational, prove that \(r+x\) and \(rx\) are irrational.
 \end{exercise}
 \begin{solution}
-    Define \(f:\R\to\R\) by \(f(x)=x^3\). The function \(f\) is a polynomial, and hence smooth. Injectivity follows from the fact that \(f\) is strictly increasing on \(\R\), and surjectivity follows from the existence of real cube roots for all \(x\in\R\). Therefore \(f\) is a bijective \(C^\infty\) map.
+    Since \(r\) is rational, we can write \(r=\frac{c}{d}\) for some nonzero \(c,d\in\Z\).
+    \begin{enumerate}[(i)]
+        \item Suppose \(r+x\) can be written as \(\frac{a}{b}\) for \(a,b\in\Z\), \(b\neq0\). Then 
+        \[x=\frac{a}{b}-r=\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}.\]
+        \item Suppose \(rx\) can be written as \(\frac{a}{b}\) for \(a,b\in\Z\), \(b\neq0\). Then
+        \[x=\frac{a}{b}r^{-1}=\frac{a}{b}\cdot\frac{d}{c}=\frac{ad}{bc}.\]
+    \end{enumerate}
+    In either case, we have a contradiction to the irrationality of \(x\).
+\end{solution}
 
-    The inverse function \(f^{-1}\) is given by \(f^{-1}(y)=y^{1/3}\). The first derivative with respect to \(x\) is given by \(\frac{1}{3}y^{-2/3}\), which is undefined at \(x=0\). Thus \(f^{-1}(y)\) is not differentiable at \(y=0\); it fails to be \(C^1\), let alone \(C^\infty\).
+\subsection*{Day 2}
+\begin{exercise}
+    % Elementary
+    Prove that for any natural numbers \(a,b,c\), we have \((a+b)+c=a+(b+c)\).
+\end{exercise}
+\begin{solution}
+    We use induction on \(a\), keeping \(b\) and \(c\) fixed. First we show \((0+b)+c=0+(b+c)\). By the definition of addition, \(0+b=b\), implying that \((0+b)+c=b+c\). Similarly, \(0+(b+c)=b+c\). This completes the proof of the case \(a=0\). Now suppose inductively that \((a+b)+c=a+(b+c)\). By the definition of addition, 
+    \[(S(a)+b)+c=S(a+b)+c\quad\text{and}\quad S(a)+(b+c)=S(a+(b+c)),\]
+    where \(S\) is the successor function. The inductive hypothesis gives us that \(S(a+b)+c\) is equal to \(S(a+(b+c))\), as was to be shown. 
 \end{solution}
 
 \subsection*{Day 3}
-
-\begin{exercise}
-    % Elementary
-    Let \(\mathcal{M}\) be an infinite \(\sigma\)-algebra. Show that \(\mathcal{M}\) contains an infinite sequence of disjoint sets.
-\end{exercise}
-\begin{solution}
-    Suppose \(\{E_i\}_{i=1}^\infty\subset\mathcal{M}\). Let
-    \[F_j =E_j\setminus \left(\bigcup_{i=1}^{j-1} E_i\right) = E_j \cap \left(\bigcup_{i=1}^{j-1} E_i\right)^\complement.\]
-    Then \(\{F_j\}_{j=1}^\infty\) is an infinite sequence of disjoint sets.
-\end{solution}
-
 \begin{exercise}
     % Intermediate
-    Find the conditions under which the equation \(az+b\bar{z}+c=0\) has exactly one solution, and compute that solution.
+    Let \(A\) be a nonempty set of real numbers which is bounded below. Let \(-A\) be the set of all numbers \(-x\), where \(x\in A\). Prove that \(\inf A=-\sup(-A)\).
+\end{exercise}
+\begin{solution}
+    For any two real numbers \(a\) and \(b\), \(a\leq b\) implies \(-b\leq -a\). Thus, if \(x\in A\) and \(\alpha=\inf A\), then \(-x\leq-\alpha\). Therefore, \(-\alpha\) is an upper bound of \(-A\). Let \(-\beta=\sup(-A)\). Then \(-x\leq-\beta\leq-\alpha\), and, consequently, \(\alpha\leq\beta\leq x\). That is, \(\beta\) is a lower bound of \(A\). But \(\alpha\) is the greatest lower bound of \(A\), and \(\alpha\leq\beta\), so we must have \(\alpha=\beta\). In other words, \(\inf A=-\sup(-A)\).
+\end{solution}
+
+\subsection*{Day 4}
+\begin{exercise}
+    % Intermediate
+    Prove that for any \(m,n\in\N\), \(m^{1/n}\) is either irrational or an integer.
+\end{exercise}
+\begin{solution}
+    Suppose to the contrary that \(m^{1/n}=\frac{a}{b}\) for some \(a,b\in\N\) with \(b\neq1\). Without loss of generality, let \(a\) and \(b\) be coprime. Then by the unique factorization of natural numbers, \(b^n\nmid a^n\). However, \(m=(m^{1/n})^n=a^n/b^n\), implying that \(m\not\in\Z\), a contradiction.
+\end{solution}
+
+\subsection*{Day 5}
+\begin{exercise}
+    % Intermediate
+    Find the conditions under which the equation \(az+b\bar{z}+c=0\) in one complex variable has exactly one solution, and compute that solution.
 \end{exercise}
 \begin{solution}
     We can solve this equation by forming a system of linear equations using the original equation and its conjugate.
@@ -219,16 +266,9 @@
     Thus, the condition under which the equation admits a solution is that the denominator is nonzero, i.e., \(|a|\neq|b|\).
 \end{solution}
 
-\begin{exercise}
-    % Elementary
-    Prove that for any natural numbers \(a,b,c\), we have \((a+b)+c=a+(b+c)\).
-\end{exercise}
-\begin{solution}
-    We use induction on \(a\), keeping \(b\) and \(c\) fixed. First we show \((0+b)+c=0+(b+c)\). By the definition of addition, \(0+b=b\), implying that \((0+b)+c=b+c\). Similarly, \(0+(b+c)=b+c\). This completes the proof of the case \(a=0\). Now suppose inductively that \((a+b)+c=a+(b+c)\). By the definition of addition, 
-    \[(S(a)+b)+c=S(a+b)+c\quad\text{and}\quad S(a)+(b+c)=S(a+(b+c)),\]
-    where \(S\) is the successor function. The inductive hypothesis gives us that \(S(a+b)+c\) is equal to \(S(a+(b+c))\), as was to be shown. 
-\end{solution}
+\section{Week 5: Sets}
 
+\subsection*{Day 1}
 \begin{exercise}
     % Trivial
     Let \(E\) be a nonempty subset of an ordered set; suppose \(\alpha\) is a lower bound of \(E\) and \(\beta\) is an upper bound of \(E\). Prove that \(\alpha\leq\beta\).
@@ -237,55 +277,35 @@
     Let \(x\in E\). Then \(\alpha\leq x\) by the definition of lower bound. Similarly, \(x\leq\beta\). By the transitivity of order, \(\alpha\leq\beta\).
 \end{solution}
 
-\begin{exercise}
-    % Intermediate
-    Let \(A\) be a nonempty set of real numbers which is bounded below. Let \(-A\) be the set of all numbers \(-x\), where \(x\in A\). Prove that \(\inf A=-\sup(-A)\).
-\end{exercise}
-\begin{solution}
-    For any two real numbers \(a\) and \(b\), \(a\leq b\) implies \(-b\leq -a\). Thus, if \(x\in A\) and \(\alpha=\inf A\), then \(-x\leq-\alpha\). Therefore, \(-\alpha\) is an upper bound of \(-A\). Let \(-\beta=\sup(-A)\). Then \(-x\leq-\beta\leq-\alpha\), and, consequently, \(\alpha\leq\beta\leq x\). That is, \(\beta\) is a lower bound of \(A\). But \(\alpha\) is the greatest lower bound of \(A\), and \(\alpha\leq\beta\), so we must have \(\alpha=\beta\). In other words, \(\inf A=-\sup(-A)\).
-\end{solution}
-
-\subsection{Day 4}
-
-\begin{exercise}
-    % Elementary
-    Show that \(\Z[i]\) is a subring of \(\C\).
-\end{exercise}
-\begin{solution}
-    Clearly \(\Z[i]\subset\C\). Let \(a,b,c,d\in\Z\). Then addition in \(\Z[i]\) is defined as \((a,b)+(c,d)=(a+c,b+d)\). This operation inherits closure from \(\Z\). Similarly, multiplication in \(\Z[i]\), defined as \((ac-bd,ad+bc)\), inherits closure from \(\Z\). The additive identity \((0,0)\) is in \(\Z[i]\) because \(0\in\Z\). If \((a,b)\in\Z[i]\), then \((-a,-b)\in\Z[i]\) because \(-a,-b\in\Z\). This suffices to show that \(\Z[i]\) is a subring of \(\C\).
-\end{solution}
-
+\subsection*{Day 2}
 \begin{exercise}
     % Trivial
-    Let \(a\) and \(b\) be elements of a ring \(R\). Prove that the equation \(a+x=b\) has a unique solution in \(R\).
+    Let \(X\) be a topological space; let \(A\) be a subset of \(X\). Suppose that for each \(x\in A\) there is an open set \(U\) containing \(x\) such that \(U\subset A\). Show that \(A\) is open in \(X\).
 \end{exercise}
 \begin{solution}
-    Let \(x_1,x_2\in R\) satisfy \(a+x_1=b\) and \(a+x_2=b\). Then \(x_1=-a+b\) and \(x_2=-a+b\), so \(x_1=x_2\).
+    Associate to each \(x\in A\) an open set \(U_x\subset A\). Then
+    \[V=\bigcup_{x\in A} U_x\]
+    is a union of open sets; hence \(V\) is open. Since each \(U_x\) is a subset of \(A\), we have \(V\subset A\). However, each \(x\in A\) is contained in some \(U_x\) (and therefore in \(V\)) so we also have that \(A\subset V\). Thus \(A=V\), implying that \(A\) is open.
 \end{solution}
 
+\subsection*{Day 3}
 \begin{exercise}
     % Elementary
-    Let \(S\) and \(T\) be subrings of a ring \(R\). Prove that \(S\cap T\) is a subring of \(R\).
+    Let \(\mathcal{M}\) be an infinite \(\sigma\)-algebra. Show that \(\mathcal{M}\) contains an infinite sequence of disjoint sets.
 \end{exercise}
 \begin{solution}
-        Let \(x,y\in S\cap T\). Then \(x,y\in S\). Since \(S\) is a subring, \(0\in S\), \(-x\in S\), \(x+y\in S\), and \(xy\in S\). The same argument applies to \(T\). Hence, each of 0, \(-x\), \(x+y\), and \(xy\) are in \(S\cap T\). Finally, \(S\cap T\subset R\), so \(S\cap T\) is a subring of \(R\).
+    Suppose \(\{E_i\}_{i=1}^\infty\subset\mathcal{M}\). Let
+    \[F_j =E_j\setminus \left(\bigcup_{i=1}^{j-1} E_i\right) = E_j \cap \left(\bigcup_{i=1}^{j-1} E_i\right)^\complement.\]
+    Then \(\{F_j\}_{j=1}^\infty\) is an infinite sequence of disjoint sets.
 \end{solution}
 
+\subsection*{Day 4}
 \begin{exercise}
-    % Intermediate
-    Prove that the only idempotents in an integral domain \(R\) are 0 and 1.
+    % Elementary
+    Prove that if \(\sim\) is an equivalence relation on a set \(S\), then the corresponding family \(\mathscr{P}_\sim\) is a partition of \(S\).
 \end{exercise}
 \begin{solution}
-    Let \(r\in R\), and suppose \(r^2=r\). If \(r^{-1}\) does not exist, then \(r=0\). Otherwise, multiplying both sides by \(r^{-1}\) yields \(r=1\). 
+    Let \(a\in S\). By reflexivity, \(a\in[a]_\sim\). Each element of \(S\) is contained in a nonempty equivalence class; hence the union over all such equivalence classes is \(S\). To show that the equivalence classes are mutually disjoint, consider some \(b\in S\) such that \(a\) is not equivalent to \(b\). Assume that there exists some \(x\in [a]_\sim\cap[b]_\sim\). Then \(a\sim x\) and \(b\sim x\), hence \(x\sim b\) by symmetry and \(a\sim b\) by transitivity. This is a contradiction, so \([a]_\sim\cap[b]_\sim=\emptyset\). The elements of \(\mathscr{P}_\sim\) are nonempty, disjoint, and their union is \(S\); thus \(\mathscr{P}_\sim\) is a partition of \(S\).
 \end{solution}
-
-\begin{exercise}
-    % Trivial
-    If \(R\) is a ring with identity and \(\phi:R\to S\) is a homomorphism from \(R\) to a ring \(S\), prove that \(\phi(1_R)\) is idempotent in \(S\).
-\end{exercise}
-\begin{solution}
-    By the definition of homomorphism, \(\phi(1_R)^2=\phi(1_R^2)=\phi(1_R)\).
-\end{solution}
-
 
 \end{document}

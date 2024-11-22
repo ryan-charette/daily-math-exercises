@@ -19,3 +19,5 @@ Currently, this project consists of two files. `main.tex` includes all exercises
 ## Weekly Themes
 
 The weekly themes cover a broad spectrum of mathematics from the fields of analysis, algebra, and topology. The difficulty will range from the undergraduate level to the beginning graduate level. I will update this list with the theme each week.
+
+1. Rings

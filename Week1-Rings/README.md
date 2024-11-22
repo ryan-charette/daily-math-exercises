@@ -15,6 +15,9 @@ The element $0$ is called the *additive identity*, and the element $-a$ is calle
 ## Definition of Subring
 Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under the addition and multiplication in $R$, then we say that $S$ is a *subring* of $R$. 
 
+## Definition of Nilpotent
+An element $a$ of a ring is *nilpotent* if $a^n=0$ for some positive integer $n$.
+
 ## The Binomial Thereom
 
 Let $R$ be a commutative ring and let $a,b\in R$. Then for every positive integer $k$,

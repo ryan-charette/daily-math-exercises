@@ -1,3 +1,5 @@
+# Ring Theory
+
 ## Definition of Ring
 
 A *ring* is a nonempty set $R$ equipped with two binary operations, (usually written as addition and multiplication), such that for all $a,b,c$ in $R$:
@@ -41,3 +43,27 @@ $$
 $$
 
 where ${k \choose i}$ denotes the number $\displaystyle\frac{k!}{i!(k-1)!}$. The proof is by induction on $k$.
+
+# Analysis
+
+Some exercises require basic results from real analysis. 
+
+## Compactness
+
+A subset $E\subset\text{ℝ}$ is called *compact* if every open cover of $E$ admits a finite subcover. That is, if $\lambda$ is an arbitrary collection of open sets and
+
+$$
+E\subset\bigcup_{A\in\lambda} A,
+$$
+
+then there exists a finite subcollection $F$ such that
+
+$$
+E\subset\bigcup_{A\in F} A.
+$$
+
+## Urysohn's Lemma for ℝ
+
+If $A$ and $B$ are disjoint closed subsets of the real line $\text{ℝ}$, then there exists a continuous function $f:\text{ℝ}\to[0,1]$ such that:
+
+$$f(a)=0\text{ for all } a\in A\quad\text{and}\quad f(b)=1\text{ for all } b\in B.$$

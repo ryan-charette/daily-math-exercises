@@ -1,0 +1,62 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\((\Rightarrow)\) Suppose that $\gcd(m, n) = 1$. Define the map $\phi: \Z_{mn} \to \Z_m \times \Z_n$ by \(\phi([k]_{mn}) = \left([k]_m,\, [k]_n\right)\), where $[k]_m$ denotes the equivalence class of $k$ modulo $m$. First, we verify that $\phi$ is a ring homomorphism. For any $[k]_{mn}, [l]_{mn} \in \Z_{mn}$
+\begin{align*}
+\phi([k + l]_{mn}) &= \left([k + l]_m,\, [k + l]_n\right) \\
+&= \left([k]_m + [l]_m,\, [k]_n + [l]_n\right) \\
+&= \left([k]_m,\, [k]_n\right) + \left([l]_m,\, [l]_n\right) \\
+&= \phi([k]_{mn}) + \phi([l]_{mn}) \\
+\phi([kl]_{mn}) &= \left([kl]_m,\, [kl]_n\right) \\
+&= \left([k]_m[l]_m,\, [k]_n[l]_n\right) \\
+&= \phi([k]_{mn})\phi([l]_{mn}).
+\end{align*}
+Therefore, $\phi$ preserves both addition and multiplication, so it is a ring homomorphism. Next, we show that $\phi$ is injective. The kernel of $\phi$ is
+\[\ker \phi = \left\{ [k]_{mn} \in \Z_{mn}: [k]_m = [0]_m \text{ and } [k]_n = [0]_n \right\}.\]
+This means that $m \mid k$ and $n \mid k$. Since $\gcd(m, n) = 1$, it follows that $mn \mid k$ (because $m$ and $n$ are coprime, so their least common multiple is $mn$). Therefore, $\ker \phi = \{ [0]_{mn} \}$, and thus $\phi$ is injective. To show that $\phi$ is surjective, let $\left([a]_m,\, [b]_n\right) \in \Z_m \times \Z_n$ be arbitrary. Since $\gcd(m, n) = 1$, the system of congruences
+\[
+\begin{cases}
+k \equiv a \pmod{m}, \\
+k \equiv b \pmod{n},
+\end{cases}
+\]
+has a solution for $k$ modulo $mn$. By the Extended Euclidean Algorithm, there exist integers $s$ and $t$ such that $s m + t n = 1$. Define
+\[
+k = a \cdot t n + b \cdot s m.
+\]
+Then,
+\begin{align*}
+k &\equiv a \cdot t n + b \cdot s m \pmod{m} \\
+&\equiv a \cdot t n \pmod{m} \\
+&\equiv a \cdot (1 - s m) \pmod{m} \\
+&\equiv a \cdot 1 \pmod{m} \\
+&\equiv a \pmod{m}.
+\end{align*}
+Similarly, we have $k \equiv b \pmod{n}$. Therefore, $\phi([k]_{mn}) = \left([a]_m,\, [b]_n\right)$, and thus $\phi$ is surjective. Since $\phi$ is a bijective ring homomorphism, it is an isomorphism. Therefore, $\Z_{mn} \cong \Z_m \times \Z_n$. This result is known as the \textit{Chinese Remainder Theorem}.
+
+\((\Leftarrow)\) Assume that $\Z_{mn} \cong \Z_m \times \Z_n$, but suppose for contradiction that $\gcd(m, n) > 1$.
+
+In the ring $\Z_m$, the only idempotent elements are $[0]_m$ and $[1]_m$. The same holds for $\Z_n$. Therefore, $\Z_m \times \Z_n$ has four idempotent elements:
+\[
+([0]_m, [0]_n),\quad ([0]_m, [1]_n),\quad ([1]_m, [0]_n),\quad ([1]_m, [1]_n).
+\]
+However, in $\Z_{mn}$, the idempotent elements satisfy $e^2 \equiv e \pmod{mn}$. We claim that when $\gcd(m, n) > 1$, the only idempotent elements in $\Z_{mn}$ are $[0]_{mn}$ and $[1]_{mn}$.
+
+Suppose there exists an idempotent $e \in \Z_{mn}$ such that $e \not\equiv 0 \pmod{mn}$ and $e \not\equiv 1 \pmod{mn}$. Then
+\begin{align*}
+    e^2 \equiv e \pmod{mn} \\
+    e^2 - e \equiv 0 \pmod{mn} \\
+    e(e - 1) \equiv 0 \pmod{mn}
+\end{align*}
+so $mn \mid e(e - 1)$. Since $e$ and $e - 1$ are both less than $mn$, their product is only divisible by $mn$ if one of the factors is divisible by $\gcd(m, n)$. However, this contradicts the assumption that $e \not\equiv 0 \pmod{mn}$ and $e \not\equiv 1 \pmod{mn}$. Thus, there are only two idempotent elements in $\Z_{mn}$.
+
+This discrepancy in the number of idempotent elements contradicts the assumption that $\Z_{mn} \cong \Z_m \times \Z_n$, because isomorphic rings must have the same number of idempotent elements. Therefore, our assumption that $\gcd(m, n) > 1$ must be false, and it must be that $\gcd(m, n) = 1$.
+
+\end{document}

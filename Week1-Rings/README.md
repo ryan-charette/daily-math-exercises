@@ -10,16 +10,6 @@ A *ring* is a nonempty set $R$ equipped with two binary operations, (usually wri
 
 The element $0$ is called the *additive identity*, and the element $-a$ is called the *additive inverse* of $a$. 
 
-## Types of Rings
-If $R$ is a ring such that mulitiplication is commutative (that is, if $ab=ba$ for all $a,b\in R$), then we say that $R$ is *commutative* and call $R$ a *commutative ring*.
-
-Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under the addition and multiplication in $R$, then we say that $S$ is a *subring* of $R$. 
-
-## Types of Ring Elements
-An element $a$ of a ring is *nilpotent* if $a^n=0$ for some positive integer $n$.
-
-An element $a$ of a ring is *idempotent* if $a^2=a$.
-
 ## Morphisms
 
 If $R$ and $S$ are rings, a function $\phi: R\to S$ is a *ring homomorphism* if it preserves both operations. That is, for all $a,b\in R$,
@@ -31,6 +21,16 @@ and
 $$\phi(ab)=\phi(a)\phi(b).$$
 
 A bijective ring homomorphism is called an *isomorphism*. If there exists an isomorphism from $R$ to $S$, then we say that $R$ and $S$ are *isomorphic* and write $R\cong S$.
+
+## Types of Rings
+If $R$ is a ring such that mulitiplication is commutative (that is, if $ab=ba$ for all $a,b\in R$), then we say that $R$ is *commutative* and call $R$ a *commutative ring*.
+
+Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under the addition and multiplication in $R$, then we say that $S$ is a *subring* of $R$. 
+
+## Types of Ring Elements
+An element $a$ of a ring is *nilpotent* if $a^n=0$ for some positive integer $n$.
+
+An element $a$ of a ring is *idempotent* if $a^2=a$.
 
 ## The Binomial Thereom
 

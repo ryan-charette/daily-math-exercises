@@ -28,7 +28,7 @@ and
 
 $$\phi(ab)=\phi(a)\phi(b).$$
 
-A bijective ring homomorphism is called an *isomorphism*.
+A bijective ring homomorphism is called an *isomorphism*. If there exists an isomorphism from $R$ to $S$, then we say that $R$ and $S$ are *isomorphic* and write $R\cong S$.
 
 ## The Binomial Thereom
 

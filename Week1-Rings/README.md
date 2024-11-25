@@ -8,11 +8,11 @@ A *ring* is a nonempty set $R$ equipped with two binary operations, (usually wri
 5. (Multiplication is associative) $a(bc)=(ab)c$. 
 6. (Multiplication distributes over addition) $a(b+c)=ab+ac$ and $(a+b)c=ac+bc$.
 
-If it is further true that mulitiplication is commutative (that is, if $ab=ba$ for all $a,b\in R$), then we say that $R$ is *commutative* and call $R$ a *commutative ring*.
-
 The element $0$ is called the *additive identity*, and the element $-a$ is called the *additive inverse* of $a$. 
 
-## Definition of Subring
+## Types of Rings
+If $R$ is a ring such that mulitiplication is commutative (that is, if $ab=ba$ for all $a,b\in R$), then we say that $R$ is *commutative* and call $R$ a *commutative ring*.
+
 Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under the addition and multiplication in $R$, then we say that $S$ is a *subring* of $R$. 
 
 ## Definition of Nilpotent

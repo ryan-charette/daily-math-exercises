@@ -18,6 +18,18 @@ Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under 
 ## Definition of Nilpotent
 An element $a$ of a ring is *nilpotent* if $a^n=0$ for some positive integer $n$.
 
+## Morphisms
+
+If $R$ and $S$ are rings, a function $\phi: R\to S$ is a *ring homomorphism* if it preserves both operations. That is, for all $a,b\in R$,
+
+$$\phi(a+b)=\phi(a)+\phi(b)$$
+
+and
+
+$$\phi(ab)=\phi(a)\phi(b).$$
+
+A bijective ring homomorphism is called an *isomorphism*.
+
 ## The Binomial Thereom
 
 Let $R$ be a commutative ring and let $a,b\in R$. Then for every positive integer $k$,

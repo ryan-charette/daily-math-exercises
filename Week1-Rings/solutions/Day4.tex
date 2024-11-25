@@ -1,0 +1,29 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\DeclareMathOperator{\R}{\mathbb{R}}
+
+\begin{document}
+For each \(c\in[0,1]\), define \(M_c=\{f\in R: f(c)= 0\}\). We can verify that \(M_c\) satisfies the definition of an ideal:
+\begin{itemize}
+    \item \(M_c\) is nonempty since \(0\in M_c\).
+    \item \(M_c\) is closed under addition: If \(f,g\in M_c\), then \((f+g)(c)=f(c)+g(c)=0+0=0\), so \(f+g\in M_c\).
+    \item \(M_c\) is closed under multiplication by elements of \(R\): For any \(h\in R\) and \(f\in M_c\), \((hf)(c)=h(c)f(c)=h(c)\cdot0=0\), so \(hf\in M_c\).
+\end{itemize}
+
+Consider the evaluation homomorphism \(\phi_c:R\to\R\) defined by \(\phi_c(f)= f(c)\). It has kernel \(\ker(\phi_c)=M_c\) and image \(\phi_c(R) = \R\). Since \(\phi_c\) is surjective and \(\R\) is a field, by the First Isomorphism Theorem, \(R/M_c\cong\R\). Because the quotient \(R/M_c\) is a field, \(M_c\) is a maximal ideal.
+
+Now let \(M\) be any maximal ideal in \(R\), and let \(\psi:R\to\R\) be a ring homomorphism. Since \(\R\) is a field, the kernel \(M=\ker(\psi)\) is a maximal ideal of \(R\). Define
+\[Z(M)=\{x\in[0,1]:f(x)=0\text{ for all }f\in M\}.\]
+We will show that \( Z(M) \) is non-empty. Suppose to the contrary that \(Z(M)=\emptyset\). Then, for every \(x\in[0,1]\), there exists a function \(f_x\in M\) such that \(f_x(x)\neq0\). For each \(x\in[0,1]\), \(f_x\) is continuous and \(f_x(x)\neq0\). Therefore, there exists an open interval \(U_x\) containing \(x\) such that \(f_x(y)\neq0\) for all \(y\in U_x\). The collection \(\{U_x: x\in[0,1]\}\) forms an open cover of \([0,1]\). Since \([0,1]\) is compact, there exists a finite subcover \(\{U_{x_1}, U_{x_2}, \dots, U_{x_n}\}\). Define
+\[g = f_{x_1}^2 + f_{x_2}^2 + \dots + f_{x_n}^2.\]
+Then \(g\in M\) because \(M\) is an ideal and contains each \(f_{x_i}\). For all \(y\in[0,1]\), \(g(y)>0\) because at least one \(f_{x_i}(y)\neq0\). Therefore, \(g\) is a strictly positive continuous function on \([0,1]\). Since \(g(y)>0 \) for all \(y\in[0,1]\), \(g\) is invertible in \(R\). However, invertible elements cannot be in any proper ideal. Thus, \(M=R\), contradicting the maximality of \(M\). Hence, \(Z(M)\) is non-empty.
+
+Let \(c\in Z(M)\). We will show that \(Z(M)=\{c\}\). Suppose there exists \(d\neq c\) in \(Z(M)\). Using Urysohn's Lemma, there exists a continuous function \(h\in R\) such that: \(h(c)=0\) and \(h(d)=1\). Since \(c,d\in Z(M)\), \(h\in M\), so \(h(c)=0\) and \(h(d)=0\). This leads to a contradiction because \(h(d)=1\) and \(h(d)=0\). Thus, \(Z(M)=\{c\}\).
+
+For all \(f\in M \), \(f(c)=0\), so \( M \subseteq M_c \). Since \( M \) is maximal and \(M_c\) is an ideal containing \(M\), we must have \(M=M_c\).
+
+\end{document}

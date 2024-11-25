@@ -15,8 +15,10 @@ If $R$ is a ring such that mulitiplication is commutative (that is, if $ab=ba$ f
 
 Let $R$ be a ring and let $S$ be a subset of $R$. If $S$ is itself a ring under the addition and multiplication in $R$, then we say that $S$ is a *subring* of $R$. 
 
-## Definition of Nilpotent
+## Types of Ring Elements
 An element $a$ of a ring is *nilpotent* if $a^n=0$ for some positive integer $n$.
+
+An element $a$ of a ring is *idempotent* if $a^2=a$.
 
 ## Morphisms
 

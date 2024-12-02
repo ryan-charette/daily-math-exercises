@@ -1,0 +1,11 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begin{document}
+Assume that \(R\) is not commutative. Then its center \(C\) is a proper subring of \(R\). Since \(C\) consists of all the elements that commute with every element of \(R\), it is commutative. By Lagrange's theorem for finite groups applied to the additive group of the ring, the order of \(C\) must divide the order of \(R\). Since \(C\) is a proper subring of \(R\), \(|C|=p\). 
+
+Let \(r\) be an element of \(R\) such that \(r\notin C\). Denote the centralizer of \(r\) by \(Z_r\). Every element of \(C\) commutes with every element of \(R\), so \(C\subset Z_r\). Since \(r\notin C\) but \(r\in Z_r\), \(Z_r\) must have more elements than \(C\). That is, \(|Z_r|>p\). By Lagrange's theorem, the possible orders of subrings of \(R\) are \(1\), \(p\), and \(p^2\). Therefore, \(|Z_r|=p^2\), so \(Z_r=R\). But then \(r\) commutes with every element of \(R\). This means that \(r\in C\), which contradicts our assumption that \(r\notin C\). Therefore, our initial assumption that \(R\) is not commutative must be false. Thus, \(R\) is commutative.
+\end{document}
